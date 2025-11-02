@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Wed, 16 Jul 2025 15:27:29 +0200
+Source: motra-perf
+Binary: motra-perf
+Architecture: all
+Version: 1.0
+Distribution: unstable
+Urgency: low
+Maintainer: Equivs Dummy Package Generator <las3@bitsfrozen>
+Changed-By: Equivs Dummy Package Generator <las3@bitsfrozen>
+Description:
+ motra-perf - preinstalled measurement and tracing tooling for MOTRA HIDS
+Changes:
+ motra-perf (1.0) unstable; urgency=low
+ .
+   * First version
+Checksums-Sha1:
+ ca309874b864f80f2df4331a28644a02f93b4156 2292 motra-perf_1.0_all.deb
+ 83e2b46d19fb85f498e25093840290afb9b300c4 5163 motra-perf_1.0_arm64.buildinfo
+Checksums-Sha256:
+ d3d73d512cb42cd3d5722aa90ea61523847b3cd41339383826caa2ea5ccfd7ba 2292 motra-perf_1.0_all.deb
+ d7d621d7cd9562459ea3c0673dc372de16ad0ec28ffc405aa38c3d38964d476b 5163 motra-perf_1.0_arm64.buildinfo
+Files:
+ 491ac0e15bfd1dc851e758aede8c3d54 2292 misc optional motra-perf_1.0_all.deb
+ 7cab25b8a741524e47a884d19fe7a2a2 5163 misc optional motra-perf_1.0_arm64.buildinfo

@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Wed, 20 Aug 2025 14:10:21 +0200
+Source: motra-default
+Binary: motra-default
+Architecture: all
+Version: 1.0
+Distribution: unstable
+Urgency: low
+Maintainer: Peter Heller <peter2.heller@oth-regensburg.de>
+Changed-By: Peter Heller <peter2.heller@oth-regensburg.de>
+Description:
+ motra-default - MOTRA Default installation target for basic device setup
+Changes:
+ motra-default (1.0) unstable; urgency=low
+ .
+   * First version
+Checksums-Sha1:
+ 447e9f1c7e2cd1fe3a2d048f91398a5875589993 2540 motra-default_1.0_all.deb
+ eacf005b6ba879d646f39bdcd534dd1d12efcb3b 5174 motra-default_1.0_arm64.buildinfo
+Checksums-Sha256:
+ 2aaec3e87d9932b0ec2a85bea8a0354427dcfd18fcf121b7b83f0321f2764664 2540 motra-default_1.0_all.deb
+ 2cc4575bbf8d7fb7d73db5dfacb61bf681ea5b613e196580a9622c7f74ec52cb 5174 motra-default_1.0_arm64.buildinfo
+Files:
+ 987925659475fe540b601fd2dfdf11cf 2540 misc optional motra-default_1.0_all.deb
+ fb8065861f9863b56f417df7d6cd1b83 5174 misc optional motra-default_1.0_arm64.buildinfo

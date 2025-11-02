@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Tue, 15 Jul 2025 18:50:03 +0200
+Source: motra
+Binary: motra
+Architecture: all
+Version: 1.0
+Distribution: unstable
+Urgency: low
+Maintainer: Peter Heller <peter2.heller@oth-regensburg.de>
+Changed-By: Peter Heller <peter2.heller@oth-regensburg.de>
+Description:
+ motra      - Metapackage to install the full set of tools currently supported
+Changes:
+ motra (1.0) unstable; urgency=low
+ .
+   * First version
+Checksums-Sha1:
+ 135e643bd890cdb8cd48fe9500a24b0273b3282a 2360 motra_1.0_all.deb
+ ce73d505d577b1db36911d9fa149b3eccb0c63c6 4980 motra_1.0_arm64.buildinfo
+Checksums-Sha256:
+ 1000daf5a0d5c19f81948c2da4e353e12b216a2930779ac3fdfa3273b5733d4a 2360 motra_1.0_all.deb
+ 8165627858dc5b82d9078cbdfb849c3296a4c177d11fdf658b27d5f57c42a183 4980 motra_1.0_arm64.buildinfo
+Files:
+ 2d9dbb0c10beda881cef28d48265b467 2360 misc optional motra_1.0_all.deb
+ 3c81142c049bb06430c5e431a50388dc 4980 misc optional motra_1.0_arm64.buildinfo

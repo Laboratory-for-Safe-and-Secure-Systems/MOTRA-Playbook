@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Wed, 20 Aug 2025 14:12:13 +0200
+Source: motra-database
+Binary: motra-database
+Architecture: all
+Version: 1.0
+Distribution: unstable
+Urgency: low
+Maintainer: Peter Heller <peter2.heller@oth-regensburg.de>
+Changed-By: Peter Heller <peter2.heller@oth-regensburg.de>
+Description:
+ motra-database - MOTRA database installation target for interacting with different
+Changes:
+ motra-database (1.0) unstable; urgency=low
+ .
+   * First version
+Checksums-Sha1:
+ 9151b31f3e613d72b83994a623053c8f895e7664 2436 motra-database_1.0_all.deb
+ 853d9999a4eb054dec1b0cf8b73d22a099337d3f 5179 motra-database_1.0_arm64.buildinfo
+Checksums-Sha256:
+ be334ce2cd73030e1941fa62b417b135fc3cae46c56c3f67df6d88d4e3202ea1 2436 motra-database_1.0_all.deb
+ 572682bd677b7071dab8ad9b82acdf7a8c7ed56d459cb2661e66e66f13f1d4e1 5179 motra-database_1.0_arm64.buildinfo
+Files:
+ ae1c54334555f7c56649187cd888bd3d 2436 misc optional motra-database_1.0_all.deb
+ 90865781ccd13f7da376874a32737eb5 5179 misc optional motra-database_1.0_arm64.buildinfo

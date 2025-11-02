@@ -1,0 +1,351 @@
+location: ../.gitman
+sources:
+  - repo: https://github.com/Laboratory-for-Safe-and-Secure-Systems/motra-images
+    name: motra-images
+    rev: main
+    type: git
+    params: --depth 1
+    links:
+      - target: ../motra/images
+  - repo: https://github.com/Laboratory-for-Safe-and-Secure-Systems/motra-setups
+    name: motra-setups
+    rev: main
+    type: git
+    params: --depth 1
+    links:
+      - target: ../motra/setups
+    scripts: 
+      - cd simple-water-treatment-plant/multi-dev && docker compose -f plc.yml build 
+      - cd simple-water-treatment-plant/multi-dev && docker compose -f headunit.yml build 
+      - cd simple-water-treatment-plant/multi-dev && docker compose -f levelsensor-server.yml build 
+      - cd simple-water-treatment-plant/multi-dev && docker compose -f valve-server.yml build 
+  - repo: git@github.com:Frozenbitz/opc-sim-exploits.git
+    name: frozenbitz-exploits
+    rev: main
+    type: git
+    params: --depth 1
+    links:
+      - target: ../development/sim-exploits
+  - repo: git@github.com:Laboratory-for-Safe-and-Secure-Systems/opcua-water-treatment-sim.git
+    name: deprecated-water-sim
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../development/deprecated-water-sim
+  - repo: git@github.com:DocDriven/sim-images.git
+    name: deprecated-sim-images
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../development/deprecated-images
+  - repo: https://github.com/darkoperator/dnsrecon.git
+    name: dnsrecon
+    rev: 1.3.1
+    type: git
+    params: --depth 1
+    links:
+      - target: ../recon/dnsrecon
+    scripts:
+      - pipx install .
+  - repo: git@github.com:Frozenbitz/KRITIS3M-Modelling-Workspace.git
+    name: OPC-Modelling-Workspace
+    rev: main
+    type: git
+    params: --depth 1
+    links:
+      - target: ../development/modelling-workspace
+  - repo: https://github.com/claroty/opcua-exploit-framework
+    name: claroty-framework
+    rev: main
+    type: git
+    params: --depth 1
+    links:
+      - target: ../remote-exploit/claroty-framework
+    scripts:
+      - curl -sLO https://gist.github.com/Frozenbitz/000b9885557fede60649e9686f2d494f/raw/90827b476d6179b3b591d9ce6cf47436b73223f4/pyproject.toml
+      - /opt/poetry/bin/poetry install --no-root
+  - repo: https://github.com/diego-treitos/linux-smart-enumeration
+    name: lse
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../local-exploit/lse
+    scripts: 
+      - ./tools/package_cvs_into_lse.sh 
+      - sudo ln -s $(realpath .)/lse.sh /usr/local/bin
+      - sudo ln -s $(realpath .)/lse_cve.sh /usr/local/bindlp 
+  - repo: https://github.com/Ettercap/ettercap
+    name: ettercap
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../mim/ettercap
+    scripts: 
+      - mkdir build && cd build && cmake .. && cmake --build . && sudo make install
+  - repo: https://github.com/netsniff-ng/netsniff-ng
+    name: netsniffng
+    rev: main
+    type: git
+    params: --depth 1
+    links:
+      - target: ../recon/netsniff
+  - repo: https://github.com/uweber/mausezahn
+    name: mausezahn
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../remote-exploit/mausezahn
+  - repo: https://github.com/brannondorsey/naive-hashcat.git
+    name: naive-hashcat
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../remote-exploit/naive-hashcat
+      - source: dicts
+        target: ../seclists/rockyou
+    scripts:
+      - curl -L -o dicts/rockyou.txt https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
+  - repo: https://github.com/hahwul/dalfox
+    name: dalfox
+    rev: main
+    type: git
+    params: --depth 1
+    links:
+      - target: ../recon/dalfox
+  - repo: https://github.com/peass-ng/PEASS-ng
+    name: PEASS
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../local-exploit/peass
+  - repo: https://github.com/danielmiessler/SecLists
+    name: SecLists
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../seclists/dmiessler-SecLists
+  - repo: https://github.com/rapid7/metasploit-framework.git
+    name: metasploit-wordlists
+    rev: master
+    type: git
+    params: --depth 1
+    sparse_paths:
+      - "data/wordlists/"
+  - repo: https://github.com/DragonJAR/Security-Wordlist.git
+    name: DJAR-wordlist
+    rev: main
+    type: git
+    params: --depth 1
+    links:
+      - target: ../seclists/Security-Wordlist
+  - repo: https://github.com/random-robbie/bruteforce-lists
+    name: randrob-brutelists
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../seclists/bruteforce-lists
+  - repo: https://github.com/threat9/routersploit
+    name: routersploit
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../remote-exploit/routersploit
+    scripts:
+      - pipx install .
+  - repo: https://github.com/Tib3rius/AutoRecon
+    # usage: autorecon [OPTIONS] or sudo $(which autorecon) [OPTIONS]
+    name: autorecon
+    rev: main
+    type: git
+    params: --depth 1
+    links:
+      - target: ../recon/autorecon
+    scripts:
+    # these are plugins we do not use, and which cannot be installed on embedded targets
+      - rm autorecon/default-plugins/oracle-*
+      - rm autorecon/default-plugins/enum4linux.py
+      - pipx install .
+  - repo: https://github.com/jtesta/ssh-audit
+    name: ssh-audit
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../recon/ssh-audit
+    scripts:
+      - pipx install .
+  - repo: https://github.com/rebootuser/LinEnum
+    name: LinEnum 
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../local-exploit/LinEnum
+  - repo: https://gitlab.com/exploit-database/exploitdb 
+    name: exploitdb
+    rev: main
+    type: git
+    params: --depth 1
+    links:
+      - target: ../exploit-archive/exploitdb
+  - repo: https://github.com/WhiteWinterWolf/wwwolf-php-webshell
+    name: php-webshell
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../revshell/php-webshell
+  # windows only:
+  # - repo: https://github.com/NetSPI/PowerUpSQL
+  #   name: PowerUpSQL
+  #   rev: master
+  #   type: git
+  #   params: --depth 1
+  - repo: https://github.com/s0md3v/XSStrike
+    name: XSStrike
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../recon/XSStrike
+  - repo: https://github.com/laramies/theHarvester
+    name: harvester
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../recon/harvester
+      # sollte scripts unterstützen!
+  - repo: https://github.com/Mebus/cupp
+    name: cupp
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../bruteforce/cupp
+  - repo: https://github.com/aboul3la/Sublist3r
+    name: Sublist3r
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../recon/Sublist3r
+  - repo: https://github.com/t3l3machus/Villain
+    name: villian
+    rev: main
+    type: git
+    params: --depth 1
+    links:
+      - target: ../revshell/villian
+  - repo: https://github.com/cobbr/Covenant
+    name: Covenant
+    # Covenant runs in docker + C#!
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../revshell/Covenant
+      - target: ../C2/Covenant
+  - repo: https://github.com/epi052/feroxbuster
+    name: feroxbuster
+    rev: main
+    type: git
+    params: --depth 1
+    links:
+      - target: ../recon/feroxbuster
+    scripts: 
+      - curl -sLO  https://github.com/epi052/feroxbuster/releases/download/v2.11.0/aarch64-linux-feroxbuster.zip
+      - unzip aarch64-linux-feroxbuster.zip
+      - chmod +x feroxbuster
+      - sudo install feroxbuster /usr/local/bin
+  - repo: https://github.com/OWASP/Nettacker
+    name: netattacker
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../recon/netattacker
+  # - repo: https://github.com/odedshimon/BruteShark
+  # Windows only, can inspect pcap files for relevant data
+  #   name: BruteShark
+  #   rev: master
+  #   type: git
+  #   params: --depth 1
+  - repo: https://github.com/sullo/nikto
+    name: nikto
+    rev: master
+    type: git
+    params: --depth 1
+    links:
+      - target: ../recon/nikto
+  - repo: https://github.com/soltanali0/CVE-2025-1094-Exploit.git
+    name: CVE-2025-1094
+    rev: main
+    type: git
+    params: --depth 1
+    links:
+      - target: ../CVE-PoC/CVE-2025-1094
+
+default_group: 'motra'
+groups:
+  - name: motra
+    members: 
+      - motra-images
+      - motra-setups
+  - name: motra-private
+    members: 
+      - frozenbitz-exploits
+      - deprecated-water-sim
+      - deprecated-sim-images
+      - OPC-Modelling-Workspace
+  - name: opc-tools
+    members: 
+      - claroty-framework
+  - name: seclists
+    members: 
+      - SecLists
+      - exploitdb
+      # - metasploit-wordlists
+      - DJAR-wordlist
+      - randrob-brutelists
+      - naive-hashcat
+  - name: recon
+    members: 
+      - autorecon
+      - dnsrecon
+      - netsniffng
+      - lse
+      - dalfox
+      - PEASS
+      - ssh-audit
+      - LinEnum
+      - harvester
+      - Sublist3r
+      - feroxbuster
+      - nikto
+  - name: exploit
+    members: 
+      - Covenant
+      - villian
+      # - bruteshark
+      - netattacker
+      - cupp
+      - XSStrike
+      - php-webshell
+      - mausezahn
+      - ettercap
+      - routersploit
+      - naive-hashcat
+  - name: CVEs
+    members: 
+      - CVE-2025-1094

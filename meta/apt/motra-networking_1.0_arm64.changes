@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Tue, 15 Jul 2025 18:20:58 +0200
+Source: motra-networking
+Binary: motra-networking
+Architecture: all
+Version: 1.0
+Distribution: unstable
+Urgency: low
+Maintainer: Peter Heller <peter2.heller@oth-regensburg.de>
+Changed-By: Peter Heller <peter2.heller@oth-regensburg.de>
+Description:
+ motra-networking - MOTRA networking provides most networking tools to interact and p
+Changes:
+ motra-networking (1.0) unstable; urgency=low
+ .
+   * First version
+Checksums-Sha1:
+ 07580c34ea064e8a88546f80fafa70d0ce02c1fc 2640 motra-networking_1.0_all.deb
+ 0a3828cbf8e040bf6019fa3878fbbd319007b79b 5035 motra-networking_1.0_arm64.buildinfo
+Checksums-Sha256:
+ d8c54c86691c59e653d94e2eed1f3c8d2f43063cac1f18049cf33a8dfe7aceeb 2640 motra-networking_1.0_all.deb
+ 8e747dbb86b7d592e491d8d934c8f81f587558c9ac3f72a19e8861507ab85e9f 5035 motra-networking_1.0_arm64.buildinfo
+Files:
+ 4a1c9a35dd67989280d3e13217277fc9 2640 misc optional motra-networking_1.0_all.deb
+ 766d09f528cd41aa9e3a20add6ef6644 5035 misc optional motra-networking_1.0_arm64.buildinfo
