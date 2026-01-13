@@ -85,7 +85,7 @@ sources:
     links:
       - target: ../mim/ettercap
     scripts: 
-      - mkdir build && cd build && cmake .. && cmake --build . && make install
+      - mkdir -p build && cd build && cmake .. -DENABLE_GTK=OFF && cmake --build . && make install
   - repo: https://github.com/netsniff-ng/netsniff-ng
     name: netsniffng
     rev: main
