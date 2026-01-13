@@ -75,8 +75,8 @@ sources:
       - target: ../local-exploit/lse
     scripts: 
       - ./tools/package_cvs_into_lse.sh 
-      - sudo ln -s $(realpath .)/lse.sh /usr/local/bin
-      - sudo ln -s $(realpath .)/lse_cve.sh /usr/local/bindlp 
+      - ln -s $(realpath .)/lse.sh /usr/local/bin
+      - ln -s $(realpath .)/lse_cve.sh /usr/local/bindlp 
   - repo: https://github.com/Ettercap/ettercap
     name: ettercap
     rev: master
@@ -85,7 +85,7 @@ sources:
     links:
       - target: ../mim/ettercap
     scripts: 
-      - mkdir build && cd build && cmake .. && cmake --build . && sudo make install
+      - mkdir build && cd build && cmake .. && cmake --build . && make install
   - repo: https://github.com/netsniff-ng/netsniff-ng
     name: netsniffng
     rev: main
@@ -267,7 +267,7 @@ sources:
       - curl -sLO  https://github.com/epi052/feroxbuster/releases/download/v2.11.0/aarch64-linux-feroxbuster.zip
       - unzip aarch64-linux-feroxbuster.zip
       - chmod +x feroxbuster
-      - sudo install feroxbuster /usr/local/bin
+      - install feroxbuster /usr/local/bin
   - repo: https://github.com/OWASP/Nettacker
     name: netattacker
     rev: master
